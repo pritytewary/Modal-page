@@ -99,3 +99,27 @@ export default function Home() {
     </main>
   );
 }
+
+
+
+
+
+
+
+export default function Modal({ isVisible, onClose, children }) {
+  if (!isVisible) return null;
+  return (
+    <div className="items-center justify-center flex bg-black bg-opacity-25 backdrop-blur-sm fixed inset-0">
+      <div className="w-[600px] flex flex-col">
+        <button
+          className="place-self-end text-white text-xl"
+          onClick={() => onClose()}
+        >
+          X
+        </button>
+        <div className="bg-white rounded-sm p-2 ">{children}</div>
+      </div>
+    </div>
+  );
+}
+
